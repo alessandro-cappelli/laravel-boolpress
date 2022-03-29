@@ -13,7 +13,10 @@ class PostController extends Controller
         //     "surname"=>"Cappelli",
         // ]);
 
-        $post = Post::all();
+        // $post = Post::all();
+
+        $posts = Post::with(["category", "tags"])->get();
+        
         return response()->json($posts);
     }
 }

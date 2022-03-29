@@ -1,10 +1,11 @@
 <template>
     <div>
-        <ul>
-            <li v-for="(post, index) in posts" :key="index">
-                {{post.title}}
-            </li>
-        </ul>
+        <!-- <div v-for="(post, index) in posts" :key="index">
+            <h1>{{post.title}}</h1>
+            <p>{{post.content}}</p>
+        </div> -->
+
+        <router-view></router-view>
     </div>
 </template>
 
@@ -15,14 +16,12 @@ export default {
     name: "Main",
     data() {
         return{
-            posts: [
-
-            ]
+            posts: []
         }
     },
     created(){
         axios
-        .get("/app/posts")
+        .get("/api/posts")
         .then((apirisp)=>{
             this.posts = apirisp.data;
         })
