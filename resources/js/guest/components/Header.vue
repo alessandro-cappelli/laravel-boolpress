@@ -2,8 +2,8 @@
     <header>
         <nav>
             <!-- Link fra le pagine -->
-            <router-link :to="{ name: 'home' }">HOME</router-link>
-            <router-link :to="{ name: 'about' }">ABOUT</router-link>
+            <li><router-link :to="{ name: 'home' }">HOME</router-link></li>
+            <li><router-link :to="{ name: 'about' }">ABOUT</router-link></li>
         </nav>
     </header>
 </template>
